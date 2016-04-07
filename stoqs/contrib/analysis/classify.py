@@ -311,7 +311,7 @@ class Classifier(BiPlot):
             i += 1
      #self._saveModel(labeledGroupName, clf)
 
-    pdb.set_trace()
+   # pdb.set_trace()
     #figure.subplots_adjust(left=.02, right=.98)
     plt.show()
 
