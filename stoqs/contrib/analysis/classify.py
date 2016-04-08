@@ -57,7 +57,7 @@ class Classifier(BiPlot):
     See http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html
     '''
    
-    classifiers = { 'Nearest Neighbors' :  KNeighborsClassifier(3),
+    classifiers = { 'Nearest_Neighbors' :  KNeighborsClassifier(3),
                     'Linear_SVM': SVC(kernel="linear", C=0.025),
                     'RBF_SVM': SVC(gamma=2, C=1),
                     'Decision_Tree': DecisionTreeClassifier(max_depth=5),
@@ -246,7 +246,7 @@ class Classifier(BiPlot):
         clf = self.classifiers[self.args.classifier]
 
         X, y = self._loadLabeledData(labeledGroupName)
-        datasets = self._loadLabedledData(labledGroupName)
+        datasets = self._loadLabeledData(labeledGroupName)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=self.args.test_size, train_size=self.args.train_size)
 
         import pdb
