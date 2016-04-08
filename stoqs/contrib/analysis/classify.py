@@ -230,7 +230,7 @@ class Classifier(BiPlot):
         X, y = self._loadLabeledData(labeledGroupName)
 
         if X.any() and y.any():
-            for name, clf in self.classifiers.iteritems():
+           for name, clf in self.classifiers.iteritems():
                 scores = cross_val_score(clf, X, y, cv=5)
                 print("%-18s accuracy: %0.2f (+/- %0.2f)" % (name, scores.mean(), scores.std() * 2))
         else:
@@ -252,9 +252,9 @@ class Classifier(BiPlot):
         import pdb
         pdb.set_trace()
         # TODO: Implement graphical evaluation as in http://scikit-learn.org/stable/auto_examples/plot_classifier_comparison.html
-        i = 1
+i = 1
     # iterate over datasets
-        for ds in datasets:
+for ds in datasets:
         # preprocess dataset, split into training and test part
             X, y = ds
             X = StandardScaler().fit_transform(X)
@@ -279,10 +279,10 @@ class Classifier(BiPlot):
             i += 1
 
     # iterate over classifiers
-        for name, clf in self.classifiers.iteritems():
-            ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
-            clf.fit(X_train, y_train)
-            score = clf.score(X_test, y_test)
+            for name, clf in self.classifiers.iteritems():
+                ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
+                clf.fit(X_train, y_train)
+                score = clf.score(X_test, y_test)
 
         # Plot the decision boundary. For that, we will assign a color to each
         # point in the mesh [x_min, m_max]x[y_min, y_max].
@@ -313,9 +313,9 @@ class Classifier(BiPlot):
 
    # pdb.set_trace()
     #figure.subplots_adjust(left=.02, right=.98)
-    plt.show()
+            plt.show()
 
-    def _saveModel(self, labeledGroupName, clf):
+     def _saveModel(self, labeledGroupName, clf):
         '''
         Pickle and save the model in the database 
         '''
